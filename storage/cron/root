@@ -1,0 +1,24 @@
+MAILTO="paul.przyborski@nasa.gov,teodoro.e.gelabert@nasa.gov,karl.hill@nasa.gov"
+
+@reboot sleep 120 && /var/www/html/interpreter/storage/scripts/restart_kb.sh
+
+0 */12 * * * /bin/date >> /var/lib/pgsql/scripts-postgresql-7.5.2-wildfly/backup-logs/backup.log 2>&1
+0 */12 * * * cd /var/lib/pgsql/scripts-postgresql-7.5.2-wildfly/ && ./extract_data.sh >> /var/lib/pgsql/scripts-postgresql-7.5.2-wildfly/backup-logs/backup.log 2>&1 && mkdir "backup/data-$(date +\%d\%m\%Y-\%H)" && cp data/* "backup/data-$(date +\%d\%m\%Y-\%H)"
+
+# Delete backups that are older than 7 days at 5am every day.
+0 5 * * * find /var/lib/pgsql/scripts-postgresql-7.5.2-wildfly/backup/* -mtime +6 -exec rm -rf {} \;
+
+# Call the Laravel command scheduler every minute for Interpreter.
+* * * * * cd /var/www/html/interpreter && php artisan schedule:run >> /dev/null 2>&1
+
+# Call the Laravel command scheduler every minute for ESCCOR Portal.
+* * * * * cd /var/www/html/esccor-portal && php artisan schedule:run >> /dev/null 2>&1
+
+# Run ESCCOR import/exports at 10pm every day.
+0 22 * * * /var/www/html/interpreter/storage/scripts/routine.sh
+
+# Remove KB logs at 9:30pm every day.
+0 21 30 * *  cd /home/kb/KB-bundle/apache-tomcat-9.0.0/logs && rm -rf *
+
+# Run the crawler twice every hour from 7pm to 9pm.
+0 19-21 * * * cd /var/www/html/interpreter/storage/scripts/ && ./run_crawler.sh && ./run_crawler.sh

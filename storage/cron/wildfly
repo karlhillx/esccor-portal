@@ -1,0 +1,6 @@
+MAILTO="paul.przyborski@nasa.gov,karl.hill@nasa.gov"
+
+@reboot /home/wildfly/wildfly-11.0.0-ITM-bundle/bin/run-itm.sh restart
+@reboot /home/wildfly/wildfly-11.0.0-CAM-bundle/bin/run-cam.sh restart
+#Ansible: itm-autostart
+#@reboot cd ~wildfly/wildfly-11.0.0-ITM-bundle/bin && ./run-itm.sh restart

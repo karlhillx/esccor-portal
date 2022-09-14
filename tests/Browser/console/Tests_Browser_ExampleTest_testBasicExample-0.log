@@ -1,0 +1,8 @@
+[
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/mondeca-webapp-dev.nasawestprime.com\/js\/app.js?id=b7c73a8ec32794536bfb 114623:14 \"[Vue warn]: Cannot find element: #tree\"",
+        "source": "console-api",
+        "timestamp": 1585272056655
+    }
+]
