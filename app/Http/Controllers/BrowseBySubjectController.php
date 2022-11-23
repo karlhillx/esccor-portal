@@ -59,7 +59,7 @@ class BrowseBySubjectController
     {
         $startsWith = Str::startsWith($child, 'http://');
 
-        if (!$startsWith) {
+        if (! $startsWith) {
             $child = 'itm:n#_'.$child;
         }
 

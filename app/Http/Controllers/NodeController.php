@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use BadFunctionCallException;
+use function count;
 use InvalidArgumentException;
 use JsonSerializable;
 use RuntimeException;
-use function count;
 
 /**
  * Represents a node in a tree of nodes.
@@ -83,7 +83,6 @@ class NodeController implements JsonSerializable
      * Returns the sibling with the given offset from this node, or NULL if there is no such sibling.
      *
      * @param  int  $offset
-     *
      * @return NodeController|null
      */
     private function getSibling(int $offset): ?NodeController
@@ -126,7 +125,6 @@ class NodeController implements JsonSerializable
 
     /**
      * @param  bool  $includeSelf
-     *
      * @return array
      */
     protected function getSiblingsGeneric(bool $includeSelf): array
@@ -165,10 +163,9 @@ class NodeController implements JsonSerializable
      * Returns a single node property by its name.
      *
      * @param  string  $name
-     *
      * @return mixed
-     * @throws InvalidArgumentException
      *
+     * @throws InvalidArgumentException
      */
     public function get($name)
     {
@@ -184,10 +181,9 @@ class NodeController implements JsonSerializable
     /**
      * @param  string  $name
      * @param  mixed  $args
-     *
      * @return mixed
-     * @throws BadFunctionCallException
      *
+     * @throws BadFunctionCallException
      */
     public function __call($name, $args)
     {
@@ -203,10 +199,9 @@ class NodeController implements JsonSerializable
 
     /**
      * @param  string  $name
-     *
      * @return mixed
-     * @throws RuntimeException
      *
+     * @throws RuntimeException
      */
     public function getName($name)
     {
@@ -224,7 +219,6 @@ class NodeController implements JsonSerializable
 
     /**
      * @param  string  $name
-     *
      * @return bool
      */
     public function isset($name): bool
@@ -285,7 +279,6 @@ class NodeController implements JsonSerializable
 
     /**
      * @param  bool  $includeSelf
-     *
      * @return array
      */
     protected function getDescendantsGeneric(bool $includeSelf): array
@@ -333,7 +326,6 @@ class NodeController implements JsonSerializable
 
     /**
      * @param  bool  $includeSelf
-     *
      * @return array
      */
     protected function getAncestorsGeneric(bool $includeSelf): array

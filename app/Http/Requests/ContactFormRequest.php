@@ -25,11 +25,11 @@ class ContactFormRequest extends FormRequest
     {
         return [
             'name' => [
-                'required'
+                'required',
             ],
             'email' => [
                 'required',
-                'email'
+                'email',
             ],
             'title' => [],
             'url' => [],

@@ -16,13 +16,16 @@ class ApiResource
     use Transformable;
 
     public const RESULT_SIZE = '5000';
+
     public const LANGUAGE = '&dataLang=EN';
 
     protected $client;
+
     protected $baseURI;
 
     /**
      * ApiResource constructor.
+     *
      * @param  Client  $client
      */
     public function __construct(Client $client)
@@ -77,26 +80,21 @@ class ApiResource
 
         $response = $this->client->put($this->baseURI.'search',
             [
-                'json' =>
-                    [
-                        'offset' => 0,
-                        'size' => self::RESULT_SIZE,
-                        'q' => '',
-                        'filters' =>
-                            [
-                                $type.'.value' =>
-                                    [
-                                        'type' => 'terms',
-                                        'params' =>
-                                            [
-                                                'values' =>
-                                                    [
-                                                        $uri
-                                                    ],
-                                            ],
-                                    ],
-                            ]
-                    ]
+                'json' => [
+                    'offset' => 0,
+                    'size' => self::RESULT_SIZE,
+                    'q' => '',
+                    'filters' => [
+                        $type.'.value' => [
+                            'type' => 'terms',
+                            'params' => [
+                                'values' => [
+                                    $uri,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ]
         );
 
@@ -105,6 +103,7 @@ class ApiResource
 
     /**
      * @return SessionManager|Store|Collection|mixed
+     *
      * @throws Exception
      */
     public function getStoredJSONData()
@@ -155,8 +154,8 @@ class ApiResource
             $parent = '&parent='.urlencode($parent);
         }
         $urlString .= $parent;
-        $urlString .='&descAware=true&dataLang=EN&range=0-19';
-       // dd($urlString);
+        $urlString .= '&descAware=true&dataLang=EN&range=0-19';
+        // dd($urlString);
 
         http://mondeca-webapp-stage.nasawestprime.com:9090/KB/groups/elements?parent=itm%3An%23_144982&descAware=true&dataLang=EN&range=0-19&uri=itm%3An%23_144981
         return Http::get($this->baseURI.'groups/elements?'.$urlString)->json();

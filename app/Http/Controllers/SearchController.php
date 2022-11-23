@@ -27,6 +27,7 @@ class SearchController extends Controller
     /**
      * @param  Request  $request
      * @return Factory|View
+     *
      * @throws Exception
      */
     public function index(Request $request)
@@ -40,5 +41,4 @@ class SearchController extends Controller
 
         return view('search', ['data' => $contentUnits]);
     }
-
 }

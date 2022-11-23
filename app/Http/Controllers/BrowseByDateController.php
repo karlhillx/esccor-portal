@@ -26,6 +26,7 @@ class BrowseByDateController extends Controller
 
     /**
      * @return Factory|View
+     *
      * @throws Exception
      */
     public function index()
@@ -47,14 +48,15 @@ class BrowseByDateController extends Controller
 
     /**
      * @return Factory|View
+     *
      * @throws Exception
      */
     public function post()
     {
         $dates = explode('-', request()->input('daterange'));
-//dd($dates);
+        //dd($dates);
         $storedContentUnits = $this->api->getStoredJSONData();
-//dd($storedContentUnits);
+        //dd($storedContentUnits);
         $fromDate = Carbon::parse(Carbon::createFromFormat('F j, Y', trim($dates[0])));
         $toDate = Carbon::parse(Carbon::createFromFormat('F j, Y', trim($dates[1])));
 
@@ -64,5 +66,4 @@ class BrowseByDateController extends Controller
 
         return view('browse.date', ['data' => $data]);
     }
-
 }
