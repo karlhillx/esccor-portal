@@ -13,6 +13,6 @@ return [
 
     'default' => [
         'base_uri' => env('API_BASE_URI', 'http://mondeca-webapp-dev.nasawestprime.com'),
-        'headers' => ['Accept' => 'application/json']
-    ]
+        'headers' => ['Accept' => 'application/json'],
+    ],
 ];

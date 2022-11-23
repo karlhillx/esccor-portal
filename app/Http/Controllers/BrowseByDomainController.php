@@ -27,6 +27,7 @@ class BrowseByDomainController extends Controller
     /**
      * @param  Request  $request
      * @return Factory|View
+     *
      * @throws Exception
      */
     public function index(Request $request)
@@ -37,11 +38,11 @@ class BrowseByDomainController extends Controller
     /**
      * @param  Request  $request
      * @return Factory|View
+     *
      * @throws Exception
      */
     public function post(Request $request)
     {
         return $this->displayDomains($request, 'browse.domain');
     }
-
 }

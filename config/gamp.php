@@ -63,7 +63,7 @@ return [
     | Valid Values: (Boolean) "true" OR "false"
     |
     */
-    'is_disabled' => !('production' === env('APP_ENV', 'production')),
+    'is_disabled' => ! ('production' === env('APP_ENV', 'production')),
 
     /*
     |--------------------------------------------------------------------------

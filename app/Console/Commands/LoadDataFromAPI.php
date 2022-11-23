@@ -12,6 +12,7 @@ use JsonException;
 class LoadDataFromAPI extends Command
 {
     protected $client;
+
     protected $baseURI;
 
     /**
@@ -45,6 +46,7 @@ class LoadDataFromAPI extends Command
      * Execute the console command.
      *
      * @return mixed
+     *
      * @throws JsonException
      */
     public function handle()
@@ -62,25 +64,23 @@ class LoadDataFromAPI extends Command
 
     /**
      * @return mixed
+     *
      * @throws JsonException
      */
     public function getAll() // Get All Content Units
     {
         $response = $this->client->put($this->baseURI.'search',
             [
-                'json' =>
-                    [
-                        'offset' => 0,
-                        'size' => ApiResource::RESULT_SIZE,
-                        'q' => '',
-                        'mode' => 'full',
-                        'type' => 'pub:Content_Unit',
-                    ]
+                'json' => [
+                    'offset' => 0,
+                    'size' => ApiResource::RESULT_SIZE,
+                    'q' => '',
+                    'mode' => 'full',
+                    'type' => 'pub:Content_Unit',
+                ],
             ]
         );
 
         return json_decode($response->getBody()->getContents(), true);
     }
-
 }
-

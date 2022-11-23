@@ -16,12 +16,14 @@ class ListSchedule extends Command
      * @var string
      */
     protected $signature = 'schedule:list';
+
     /**
      * The console command description.
      *
      * @var string
      */
     protected $description = 'List all scheduled tasks';
+
     /**
      * @var Schedule
      */
@@ -62,7 +64,7 @@ class ListSchedule extends Command
             $this->table(
                 [
                     'Description', 'Command', 'Schedule', 'Upcoming', 'Timezone', 'Overlaps?', 'In Maintenance?',
-                    'One Server?'
+                    'One Server?',
                 ],
                 $events
             );
@@ -86,6 +88,6 @@ class ListSchedule extends Command
             $date->setTimezone($event->timezone);
         }
 
-        return (CronExpression::factory($event->expression)->getNextRunDate($date->toDateTimeString()))->format('Y-m-d H:i:s');
+        return CronExpression::factory($event->expression)->getNextRunDate($date->toDateTimeString())->format('Y-m-d H:i:s');
     }
 }

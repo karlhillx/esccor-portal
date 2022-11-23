@@ -22,6 +22,7 @@ trait Transformable
 
     /**
      * Transformable constructor.
+     *
      * @param  Client  $client
      */
     public function __construct(Client $client)
@@ -34,13 +35,14 @@ trait Transformable
      *
      * @param $data
      * @return Collection
+     *
      * @throws Exception
      */
     public function transformContentUnit($data): Collection
     {
         $contentUnits = new Collection();
 
-        if (!empty($data)) {
+        if (! empty($data)) {
             foreach ($data['items'] as $item) {
                 // Convert updated epoch to DateTime to Carbon
                 $timestamp = $item['fields']['bo:updated_the'][0];
@@ -88,6 +90,7 @@ trait Transformable
      * @param  Request  $request
      * @param $route
      * @return Factory|View
+     *
      * @throws Exception
      */
     public function displayDomains(Request $request, $route)

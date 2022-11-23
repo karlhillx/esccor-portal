@@ -27,6 +27,7 @@ class DisplayRelatedContentUnits extends Controller
     /**
      * @param  Request  $request
      * @return Factory|View
+     *
      * @throws Exception
      */
     public function index(Request $request)
@@ -41,5 +42,4 @@ class DisplayRelatedContentUnits extends Controller
 
         return view('display', compact('data'));
     }
-
 }

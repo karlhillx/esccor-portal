@@ -30,6 +30,7 @@ class DashboardController extends Controller
      * Show the application dashboard.
      *
      * @return Renderable
+     *
      * @throws Exception
      */
     public function index(): Renderable
@@ -63,10 +64,10 @@ class DashboardController extends Controller
         $doughnutChart->dataset('', 'doughnut', [$countAllRecords])->options([
             'backgroundColor' => [
                 'orange',
-            ]
+            ],
         ]);
 
-        if (!session()->has('MondecaData')) {
+        if (! session()->has('MondecaData')) {
             toastr()->success('Welcome to the NASA ESCCOR Portal!');
         }
 
@@ -97,7 +98,4 @@ class DashboardController extends Controller
 
         return $collection->take(6);
     }
-
 }
-
-

@@ -15,6 +15,7 @@ class ContactFormSubmitted extends Mailable
 
     /**
      * ContactFormSubmitted constructor.
+     *
      * @param  ContactFormRequest  $request
      */
     public function __construct(ContactFormRequest $request)

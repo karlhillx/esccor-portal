@@ -38,7 +38,6 @@ class DetailController extends Controller
         $title = $data['label'][0];
         $data = $data['properties'];
 
-
         if (empty($data)) {
             toastr($this->API_ERROR_MSG, 'error');
             $data = [];

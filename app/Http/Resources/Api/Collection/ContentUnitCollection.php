@@ -20,7 +20,7 @@ class ContentUnitCollection extends ResourceCollection
             return [
                 'id' => $item->id,
                 'name' => $item->name,
-                'description' => $item->description
+                'description' => $item->description,
             ];
         });
     }
@@ -32,7 +32,7 @@ class ContentUnitCollection extends ResourceCollection
     public function with($request)
     {
         return [
-            'status' => true
+            'status' => true,
         ];
     }
 }
