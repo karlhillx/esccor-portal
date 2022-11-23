@@ -24,6 +24,7 @@
           rel="stylesheet">
 
     <link rel="alternate" type="application/atom+xml" title="{{ config('app.name') }}" href="{{ route('rss') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 

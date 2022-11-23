@@ -1,29 +1,26 @@
 @charset "UTF-8";
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-// Normalize
-@import '~normalize.css/normalize';
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-// Datatables
-@import "~datatables.net-dt/css/jquery.dataTables";
-@import "~datatables.net-bs4/css/dataTables.bootstrap4";
-@import "~datatables.net-buttons-dt/css/buttons.dataTables";
-// Font Awesome
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-// Toastr
-@import '~toastr/toastr';
-// Daterangepicker
-@import '~daterangepicker/daterangepicker';
-// Chart.js
-@import '~chart.js/dist/Chart';
-// Select2
-@import '~select2/src/scss/core';
-// JsTree
-@import '~jstree/dist/themes/default/style';
+
+@import url('https://fonts.bunny.net/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/regular.css';
+@import '@fortawesome/fontawesome-free/css/solid.css';
+@import '@fortawesome/fontawesome-free/css/brands.css';
+
+@import 'datatables.net-dt/css/jquery.dataTables.css';
+@import 'datatables.net-responsive-dt/css/responsive.dataTables.css';
+
+@import 'toastr/toastr.scss';
+
+@import 'daterangepicker/daterangepicker.css';
+
+@import 'select2/dist/css/select2.css';
+
+@import 'jstree/dist/themes/default/style.min.css';
 
 html, body {
     font-size: .875rem;

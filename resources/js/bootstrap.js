@@ -15,8 +15,6 @@ try {
     window.DataTable = require("datatables.net");
     window.DataTable = require("datatables.net-bs4");
     window.DataTable = require("datatables.net-buttons");
-    //window.DataTable = require("datatables.net-fixedcolumns");
-    // window.DataTable = require("datatables.net-fixedcolumns-bs4");
 
     // https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.min.js
     window.toastr = require("toastr");
