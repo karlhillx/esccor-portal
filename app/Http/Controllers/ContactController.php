@@ -31,8 +31,7 @@ class ContactController extends Controller
         $request->validated();
 
         Mail::to(env('ESCCOR_OWNER_EMAIL'))
-            ->cc('paul.d.przyborski@nasa.gov')
-            ->bcc('karl.hill@nasa.gov')
+            ->cc('karl.hill@nasa.gov')
             ->send(new ContactFormSubmitted($request)
             );
 

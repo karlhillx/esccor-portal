@@ -48,8 +48,6 @@
                         <strong>Librarian/Taxonomist | Earth Science Division</strong><br>
                         SSAI @ NASA Goddard Space Flight Center<br>
                         Office: 301-614-5894 | Cell: 678-613-8072<br>
-                        <strong><a
-                                href="mailto:meghan.fitzgerald@nasa.gov">meghan.fitzgerald@nasa.gov</a></strong>
                     </address>
                 </div>
             </div>

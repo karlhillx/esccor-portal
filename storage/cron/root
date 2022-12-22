@@ -1,4 +1,4 @@
-MAILTO="paul.przyborski@nasa.gov,teodoro.e.gelabert@nasa.gov,karl.hill@nasa.gov"
+MAILTO="karl.hill@nasa.gov"
 
 @reboot sleep 120 && /var/www/html/interpreter/storage/scripts/restart_kb.sh
 
