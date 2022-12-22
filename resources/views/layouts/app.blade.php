@@ -19,12 +19,13 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" type="text/css"
           rel="stylesheet">
 
     <link rel="alternate" type="application/atom+xml" title="{{ config('app.name') }}" href="{{ route('rss') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Fonts -->
+    <link href="https://fonts.bunny.net/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
